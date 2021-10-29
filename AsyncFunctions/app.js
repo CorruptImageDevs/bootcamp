@@ -87,6 +87,13 @@ const fakeRequestPromise = (url) => {
 }
 
 async function makeTwoRequests() {
-    let data1 = await fakeRequestPromise('/page1');
-    console.log(data1);
+    try{
+        let data1 = await fakeRequestPromise('/page1');
+        console.log(data1);
+        let data2 = await fakeRequestPromise('/page2');
+        console.log(data2);
+    } catch(e) {
+        console.log("CAUGHT AN ERROR!")
+        console.log("error is:", e)
+    }
 }
